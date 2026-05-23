@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="placement-shell page-frame">
+    <div class="placement-title">
+        <p class="eyebrow">Placement path</p>
+        <h1>Your Potential. Placed with Purpose.</h1>
+        <p>
+            The same scoring data that creates the employee mirror also creates a practical placement map for teams and managers.
+        </p>
+    </div>
+    <div class="placement-panel glass-panel">
+        <h2 id="placement-classification">Complete the sequence to reveal alignment.</h2>
+        <div id="path-list" class="path-list"></div>
+        <a class="btn primary" href="{{ url_for('results') }}">Return to Results</a>
+    </div>
+</section>
+{% endblock %}

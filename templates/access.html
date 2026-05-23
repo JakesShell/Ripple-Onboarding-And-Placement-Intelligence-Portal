@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="access-layout page-frame">
+    <div class="intro-panel">
+        <p class="eyebrow">Demo access</p>
+        <h1>Choose how you enter the sequence.</h1>
+        <p>
+            RIPPLE is a portfolio prototype. These fields simulate company and employee entry points without real authentication or secure account storage.
+        </p>
+        <div class="micro-grid">
+            <span>Invite code</span>
+            <span>Company code</span>
+            <span>Employee sequence</span>
+        </div>
+    </div>
+
+    <div class="access-grid">
+        <form id="company-access" class="glass-panel access-card" action="{{ url_for('hr_dashboard') }}">
+            <p class="panel-kicker">Company / HR Login</p>
+            <h2>Placement console</h2>
+            <label>
+                Company code
+                <input type="text" name="company" value="VITRA-DEMO" autocomplete="organization">
+            </label>
+            <label>
+                HR email
+                <input type="email" name="email" placeholder="hr@company.example" autocomplete="email">
+            </label>
+            <button class="btn primary" type="submit">Open HR Demo</button>
+            <p class="fine-print">Demo-only access. No real login session is created.</p>
+        </form>
+
+        <form id="employee-access" class="glass-panel access-card" action="{{ url_for('welcome') }}">
+            <p class="panel-kicker">Employee Access</p>
+            <h2>Begin onboarding</h2>
+            <label>
+                Invite code
+                <input type="text" name="invite" value="RIPPLE-10" autocomplete="off">
+            </label>
+            <label>
+                Name
+                <input id="employee-name" type="text" name="name" placeholder="Your name" autocomplete="name">
+            </label>
+            <button class="btn primary" type="submit">Continue</button>
+            <p class="fine-print">Responses are stored in this browser for the local demo.</p>
+        </form>
+    </div>
+</section>
+{% endblock %}

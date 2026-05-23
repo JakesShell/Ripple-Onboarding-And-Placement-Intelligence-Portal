@@ -1,49 +1,40 @@
-﻿{% extends "base.html" %}
+{% extends "base.html" %}
 
 {% block content %}
-<section class="hero hero-small">
-    <div class="page-shell">
-        <div class="hero-copy">
-            <p class="eyebrow">Profile Output</p>
-            <h1>Your LUMEN Results</h1>
-            <p class="hero-text">
-                Your result will show your strongest onboarding and communication style tendencies.
-            </p>
+<section class="result-hero page-frame">
+    <div class="result-main glass-panel" id="employee-result">
+        <p class="eyebrow">Employee results</p>
+        <h1>Your Ripple profile is <span id="result-classification">waiting</span>.</h1>
+        <p id="operating-pattern">Complete the sequence to generate a soft mirror of your working pattern.</p>
+        <div class="result-actions">
+            <a class="btn primary" href="{{ url_for('placement') }}">View Placement Path</a>
+            <a class="btn ghost" href="{{ url_for('questions') }}">Retake Sequence</a>
         </div>
     </div>
+    <aside class="archetype-card glass-panel">
+        <div class="model-port" id="model-port">
+            <span>3D archetype model</span>
+        </div>
+        <p id="model-reference" class="fine-print">Model asset appears here after scoring.</p>
+    </aside>
 </section>
 
-<section class="page-shell result-layout" id="result-view">
-    <div class="glass-card">
-        <h2 id="primary-title">No Result Yet</h2>
-        <p id="primary-tagline">Complete the assessment first to view your profile.</p>
-        <p id="primary-summary"></p>
-    </div>
-
-    <div class="glass-card">
-        <h2>Score Breakdown</h2>
-        <div id="score-bars" class="score-bars"></div>
-    </div>
-
-    <div class="glass-card">
-        <h2>Primary Strengths</h2>
-        <ul id="strength-list" class="bullet-list"></ul>
-    </div>
-
-    <div class="glass-card">
-        <h2>Preferred Onboarding Style</h2>
-        <ul id="onboarding-list" class="bullet-list"></ul>
-    </div>
-
-    <div class="glass-card">
-        <h2>Manager Guidance</h2>
-        <ul id="manager-list" class="bullet-list"></ul>
-    </div>
-
-    <div class="glass-card">
-        <h2>Secondary Color</h2>
-        <p id="secondary-title"></p>
-        <p id="secondary-summary"></p>
-    </div>
+<section class="page-frame result-grid">
+    <article class="glass-panel">
+        <h2>Primary strengths</h2>
+        <ul id="strengths-list" class="quiet-list"></ul>
+    </article>
+    <article class="glass-panel">
+        <h2>How you work best</h2>
+        <p id="work-best"></p>
+    </article>
+    <article class="glass-panel">
+        <h2>Suggested onboarding path</h2>
+        <p id="onboarding-path"></p>
+    </article>
+    <article class="glass-panel">
+        <h2>Growth note</h2>
+        <p id="growth-note"></p>
+    </article>
 </section>
 {% endblock %}

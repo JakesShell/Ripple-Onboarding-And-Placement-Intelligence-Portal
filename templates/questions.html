@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="sequence-shell page-frame" id="question-sequence">
+    <aside class="sequence-rail glass-panel">
+        <p class="panel-kicker">Division</p>
+        <strong id="division-number">01 / 10</strong>
+        <div class="progress-track" aria-label="Sequence progress">
+            <span id="progress-fill"></span>
+        </div>
+        <ol id="division-list" class="division-list">
+            {% for item in questions %}
+            <li data-step="{{ loop.index0 }}">{{ item.division }}</li>
+            {% endfor %}
+        </ol>
+    </aside>
+
+    <article class="question-workspace glass-panel">
+        <div class="question-ripple" aria-hidden="true"></div>
+        <p class="eyebrow" id="division-name">Identity</p>
+        <h1 id="question-text">Question text</h1>
+        <p id="insight-text" class="insight-text">Company insight text</p>
+
+        <label class="response-label" for="response-input">Response</label>
+        <textarea id="response-input" rows="7" placeholder="Write in your own language. Mention how you think, move, support, build, or decide."></textarea>
+
+        <div class="chip-row" id="signal-chips" aria-label="Optional signal chips"></div>
+
+        <div class="sequence-actions">
+            <button class="btn ghost" id="back-question" type="button">Back</button>
+            <button class="btn primary" id="next-question" type="button">Next</button>
+        </div>
+        <p class="fine-print">Prototype scoring uses response keywords and optional chips. It is not a hiring decision system.</p>
+    </article>
+</section>
+{% endblock %}

@@ -1,26 +1,25 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
 <body>
+    <div class="water-field" aria-hidden="true"></div>
     <header class="site-header">
-        <nav class="nav-shell">
-            <a class="brand" href="{{ url_for('home') }}">
-                <span class="brand-main">LUMEN</span>
-                <span class="brand-sub">Powered By AVIAN</span>
-            </a>
-
-            <div class="nav-links">
-                <a href="{{ url_for('home') }}">Home</a>
-                <a href="{{ url_for('about') }}">About</a>
-                <a href="{{ url_for('assessment') }}">Assessment</a>
-                <a href="{{ url_for('pathways') }}">Pathways</a>
-                <a href="{{ url_for('results') }}">Results</a>
-            </div>
+        <a class="brand" href="{{ url_for('splash') }}" aria-label="RIPPLE home">
+            <span class="brand-mark">RIPPLE</span>
+            <span class="brand-line">Onboarding & Placement by VITRA</span>
+        </a>
+        <nav class="nav-links" aria-label="Primary navigation">
+            <a href="{{ url_for('access') }}">Access</a>
+            <a href="{{ url_for('welcome') }}">Welcome</a>
+            <a href="{{ url_for('questions') }}">Sequence</a>
+            <a href="{{ url_for('placement') }}">Paths</a>
+            <a href="{{ url_for('hr_dashboard') }}">HR</a>
         </nav>
     </header>
 
@@ -28,36 +27,9 @@
         {% block content %}{% endblock %}
     </main>
 
-    <button id="chat-toggle" class="chat-toggle" type="button">Chat</button>
-
-    <section id="chat-panel" class="chat-panel hidden">
-        <div class="chat-header">
-            <div>
-                <h3>LUMEN Guide</h3>
-                <p>AVIAN Assisted Navigation</p>
-            </div>
-            <button id="chat-close" class="chat-close" type="button">×</button>
-        </div>
-
-        <div id="chat-messages" class="chat-messages">
-            <div class="chat-bubble bot">
-                Welcome to LUMEN. I can help you start the assessment, explain AVIAN, or guide you to the right page.
-            </div>
-        </div>
-
-        <div class="chat-actions">
-            <button type="button" class="quick-action" data-message="Start my assessment">Start Assessment</button>
-            <button type="button" class="quick-action" data-message="What is LUMEN?">What Is LUMEN?</button>
-            <button type="button" class="quick-action" data-message="What is AVIAN?">What Is AVIAN?</button>
-            <button type="button" class="quick-action" data-message="Explain the four colors">Four Colors</button>
-        </div>
-
-        <form id="chat-form" class="chat-form">
-            <input id="chat-input" type="text" placeholder="Ask LUMEN for guidance..." autocomplete="off">
-            <button type="submit">Send</button>
-        </form>
-    </section>
-
+    <script>
+        window.RIPPLE_QUESTIONS = {{ questions|default([])|tojson }};
+    </script>
     <script src="{{ url_for('static', filename='app.js') }}"></script>
 </body>
 </html>

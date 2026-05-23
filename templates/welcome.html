@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="welcome-shell page-frame">
+    <div class="glass-panel welcome-copy">
+        <p class="eyebrow">Employee sequence</p>
+        <h1>Before placement, the work pattern should feel seen.</h1>
+        <p>
+            The RIPPLE sequence asks 10 open-response questions across identity, communication, pressure, innovation, leadership, precision, client fit, team dynamics, growth, and autonomy.
+        </p>
+        <p>
+            Your result is a soft mirror: a practical reflection of how you tend to work, where you may thrive, and what kind of onboarding path can support your first weeks.
+        </p>
+        <a class="btn primary" href="{{ url_for('questions') }}">Start 10 Questions</a>
+    </div>
+    <aside class="model-stage" aria-label="Archetype model references">
+        <div class="model-ring"></div>
+        <div class="model-list">
+            <span>architect.glb</span>
+            <span>current.glb</span>
+            <span>signal.glb</span>
+            <span>spark.glb</span>
+            <span>anchor.glb</span>
+        </div>
+    </aside>
+</section>
+{% endblock %}

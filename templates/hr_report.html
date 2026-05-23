@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="report-shell page-frame">
+    <div class="report-heading glass-panel">
+        <p class="eyebrow">HR placement report</p>
+        <h1>{{ candidate.name }}: {{ result.classification }}</h1>
+        <p>{{ result.profile.operating_pattern }}</p>
+        <p class="fine-print">Strategic map generated from the same demo scoring model used for employee results.</p>
+    </div>
+
+    <div class="report-grid">
+        <article class="glass-panel">
+            <h2>Operating pattern</h2>
+            <p>{{ result.profile.operating_pattern }}</p>
+        </article>
+        <article class="glass-panel">
+            <h2>Primary strengths</h2>
+            <ul class="quiet-list">
+                {% for item in result.profile.primary_strengths %}
+                <li>{{ item }}</li>
+                {% endfor %}
+            </ul>
+        </article>
+        <article class="glass-panel">
+            <h2>Possible friction points</h2>
+            <ul class="quiet-list">
+                {% for item in result.profile.friction_points %}
+                <li>{{ item }}</li>
+                {% endfor %}
+            </ul>
+        </article>
+        <article class="glass-panel">
+            <h2>Recommended placement</h2>
+            <p>{{ result.profile.recommended_placement }}</p>
+        </article>
+        <article class="glass-panel">
+            <h2>Manager guidance</h2>
+            <p>{{ result.profile.manager_guidance }}</p>
+        </article>
+        <article class="glass-panel">
+            <h2>Team fit</h2>
+            <p>{{ result.profile.work_best }}</p>
+        </article>
+        <article class="glass-panel">
+            <h2>Onboarding recommendation</h2>
+            <p>{{ result.profile.onboarding_path }}</p>
+        </article>
+    </div>
+</section>
+{% endblock %}

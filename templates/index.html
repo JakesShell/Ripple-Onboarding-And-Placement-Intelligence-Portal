@@ -1,94 +1,27 @@
-﻿{% extends "base.html" %}
+{% extends "base.html" %}
 
 {% block content %}
-<section class="hero hero-home">
-    <div class="page-shell">
-        <div class="hero-copy">
-            <p class="eyebrow">Intelligent Candidate Experience</p>
-            <h1>LUMEN Onboarding Portal</h1>
-            <p class="hero-text">
-                A futuristic onboarding foundation for guiding candidates, capturing structured responses,
-                and turning early employee journeys into something more personal, clear, and scalable.
-            </p>
-
-            <div class="hero-actions">
-                <a class="btn btn-primary" href="{{ url_for('assessment') }}">Start Assessment</a>
-                <a class="btn btn-secondary" href="{{ url_for('about') }}">Explore Platform</a>
-            </div>
-        </div>
-
-        <div class="glass-card hero-card">
-            <p class="mini-label">AVIAN Insight Layer</p>
-            <h3>Human-Centered Guidance With Structured Interpretation</h3>
-            <ul class="feature-list">
-                <li>10-question guided assessment</li>
-                <li>4 color profile categorization</li>
-                <li>Multi-page onboarding foundation</li>
-                <li>Built-in chatbot navigation assistant</li>
-            </ul>
+<section class="splash-screen">
+    <div class="ripple-orbit" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div class="splash-copy">
+        <p class="eyebrow">VITRA presents</p>
+        <h1>RIPPLE</h1>
+        <p class="product-name">Onboarding & Placement Intelligence</p>
+        <p class="splash-line">Human patterns become clear here.</p>
+        <div class="choice-panel" aria-label="Access choices">
+            <a class="btn primary" href="{{ url_for('access') }}">Enter RIPPLE</a>
+            <a class="btn ghost" href="{{ url_for('access') }}#company-access">Company Access</a>
+            <a class="btn ghost" href="{{ url_for('access') }}#employee-access">Employee Access</a>
         </div>
     </div>
-</section>
-
-<section class="page-shell content-grid">
-    <div class="glass-card">
-        <h2>How It Works</h2>
-        <div class="simple-grid">
-            <div class="mini-card">
-                <h3>01</h3>
-                <p>Enter the portal and meet the LUMEN guide.</p>
-            </div>
-            <div class="mini-card">
-                <h3>02</h3>
-                <p>Answer 10 structured onboarding-style questions.</p>
-            </div>
-            <div class="mini-card">
-                <h3>03</h3>
-                <p>Receive a primary and secondary color profile.</p>
-            </div>
-            <div class="mini-card">
-                <h3>04</h3>
-                <p>Use the result to personalize onboarding pathways.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="glass-card">
-        <h2>The Four Color Groups</h2>
-        <div class="color-grid">
-            <div class="color-card red">
-                <h3>Red Driver</h3>
-                <p>Direct, decisive, action-oriented.</p>
-            </div>
-            <div class="color-card blue">
-                <h3>Blue Analyst</h3>
-                <p>Structured, logical, detail-focused.</p>
-            </div>
-            <div class="color-card green">
-                <h3>Green Supporter</h3>
-                <p>Reliable, steady, people-aware.</p>
-            </div>
-            <div class="color-card yellow">
-                <h3>Yellow Influencer</h3>
-                <p>Energetic, expressive, vision-led.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="glass-card">
-        <h2>Why This Matters</h2>
-        <p>
-            This project is designed as a stronger base for a future onboarding platform. Instead of a generic chatbot,
-            it becomes a structured product experience with pages, logic, results, and guided navigation.
-        </p>
-    </div>
-
-    <div class="glass-card">
-        <h2>Important Positioning</h2>
-        <p>
-            The four-color system should be used for communication style, learning preferences, and onboarding support.
-            It should not be treated as a stand-alone hiring decision engine.
-        </p>
+    <div class="first-viewport-hint">
+        <span>10 divisions</span>
+        <span>5 archetypes</span>
+        <span>2 result views</span>
     </div>
 </section>
 {% endblock %}

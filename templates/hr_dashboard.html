@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="hr-shell">
+    <aside class="hr-side glass-panel">
+        <p class="panel-kicker">HR console</p>
+        <h1>Placement Intelligence</h1>
+        <a class="side-link" href="{{ url_for('hr_dashboard') }}">Overview</a>
+        <a class="side-link" href="{{ url_for('questions') }}">Employee Sequence</a>
+        <a class="side-link" href="{{ url_for('placement') }}">Placement Paths</a>
+    </aside>
+
+    <main class="hr-workspace">
+        <section class="metric-grid">
+            <div class="glass-panel metric-card">
+                <span>Completed</span>
+                <strong>{{ completed }}</strong>
+            </div>
+            <div class="glass-panel metric-card">
+                <span>Pending</span>
+                <strong>{{ pending }}</strong>
+            </div>
+            <div class="glass-panel metric-card">
+                <span>Archetypes</span>
+                <strong>5</strong>
+            </div>
+        </section>
+
+        <section class="dashboard-grid">
+            <article class="glass-panel">
+                <h2>Archetype breakdown</h2>
+                <div class="breakdown-list">
+                    {% for name, count in breakdown.items() %}
+                    <div>
+                        <span>{{ name }}</span>
+                        <strong>{{ count }}</strong>
+                    </div>
+                    {% endfor %}
+                </div>
+            </article>
+
+            <article class="glass-panel">
+                <h2>Quick placement list</h2>
+                <div class="candidate-list">
+                    {% for candidate in candidates %}
+                    <a href="{{ url_for('hr_report', candidate_id=candidate.id) }}">
+                        <span>{{ candidate.name }}</span>
+                        <small>{{ candidate.status }} / {{ candidate.archetype }}</small>
+                    </a>
+                    {% endfor %}
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <aside class="hr-detail glass-panel">
+        <p class="panel-kicker">Selected candidate</p>
+        <h2>{{ selected.name }}</h2>
+        <p>{{ selected.role }} / {{ selected.status }}</p>
+        <p><strong>{{ selected.archetype }}</strong> placement pattern</p>
+        <a class="btn primary" href="{{ url_for('hr_report', candidate_id=selected.id) }}">Open HR Report</a>
+    </aside>
+</section>
+{% endblock %}
