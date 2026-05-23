@@ -1,4 +1,8 @@
-# RIPPLE Onboarding & Placement by VITRA
+﻿# RIPPLE Onboarding & Placement Intelligence Portal
+
+## Live Demo
+
+[Open the live deployed app](https://ripple-onboarding-placement-intelligence-portal-5wvrwpbul.vercel.app)
 
 ## Overview
 
@@ -134,3 +138,4 @@ True browser 3D rendering is intentionally not added in this pass to avoid intro
 - Browser-native 3D model rendering
 - Company-specific division questions
 - Manager review notes and status workflow
+
